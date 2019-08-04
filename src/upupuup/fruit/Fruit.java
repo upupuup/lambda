@@ -16,6 +16,7 @@ public class Fruit implements Serializable {
     private String space;
     private String mark;
     private List<Apple> appleList;
+    private Apple apple;
 
     public String getId() {
         return id;
@@ -65,15 +66,24 @@ public class Fruit implements Serializable {
         this.appleList = appleList;
     }
 
+    public Apple getApple() {
+        return apple;
+    }
+
+    public void setApple(Apple apple) {
+        this.apple = apple;
+    }
+
     @Override
     public String toString() {
-        return "fruit{" +
+        return "Fruit{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", type='" + type + '\'' +
                 ", space='" + space + '\'' +
                 ", mark='" + mark + '\'' +
                 ", appleList=" + appleList +
+                ", apple=" + apple +
                 '}';
     }
 }
