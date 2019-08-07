@@ -17,6 +17,7 @@ public class Fruit implements Serializable {
     private String mark;
     private List<Apple> appleList;
     private Apple apple;
+    private String remark;
 
     public String getId() {
         return id;
@@ -74,6 +75,14 @@ public class Fruit implements Serializable {
         this.apple = apple;
     }
 
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
+
     @Override
     public String toString() {
         return "Fruit{" +
@@ -84,6 +93,7 @@ public class Fruit implements Serializable {
                 ", mark='" + mark + '\'' +
                 ", appleList=" + appleList +
                 ", apple=" + apple +
+                ", remark='" + remark + '\'' +
                 '}';
     }
 }

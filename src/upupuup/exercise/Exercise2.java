@@ -10,7 +10,7 @@ import java.util.TreeSet;
  * @Author:upupupuup
  * @Date:2019/6/28 8:02 PM
  * @Version 1.0
- * @Description:[一句话描述该类的功能]
+ * @Description:在一个Set里有若干个Person对象，将这些对象按照年龄进行排序，使用lambda表达式
  */
 public class Exercise2 {
     public static void main(String[] args) {

@@ -13,6 +13,10 @@ import java.util.stream.Collectors;
  * @Description:list设置
  */
 public class FruitDemo {
+	/**
+	 * 主函数
+	 * @param args
+	 */
     public static void main(String[] args) {
         // 新建一个水果list
         List<Fruit> fruits = new ArrayList<>(16);
@@ -22,15 +26,9 @@ public class FruitDemo {
         int fruitNum = 10;
         int appleNum = 3;
 
-        // 设置水果list和苹果list
-        for (int i = 0; i < fruitNum; i++) {
-            Fruit fruit = new Fruit();
-            fruit.setId(UUID.randomUUID().toString());
-            fruit.setMark("aa" + i);
-
-            fruits.add(fruit);
-
-        }
+        // 设置水果list
+        settingFruit(fruitNum, fruits);
+        settingApple(appleNum, apples);
 
         // 赋值方式
         fruits.forEach(fruit -> fruit.setAppleList(
@@ -39,7 +37,22 @@ public class FruitDemo {
                 ).collect(Collectors.toList()
             )
         ));
+        fruits.forEach(fruit -> System.out.println(fruit));
 
+        fruits = fruits
+				.stream()
+				.map(fruit -> apples.stream()
+						.filter(apple -> apple.getMark().equals(fruit.getMark()))
+						.findFirst()
+						.map(apple -> {
+							fruit.setRemark(apple.getRemark());
+							fruit.setApple(apple);
+							return fruit;
+						})
+						.orElse(fruit)
+				).collect(Collectors.toList());
+
+		System.out.println(fruits);
         // 循环水果list
         fruits.forEach(
                 // 获取水果实体类,设置苹果list
@@ -83,11 +96,31 @@ public class FruitDemo {
         System.out.println(fruits);
     }
 
-    private static void settingApple(int appleNum, List<Apple> apples) {
+	/**
+	 * 设置水果类
+	 * @param fruitNum 个数
+	 * @param fruits 水果list
+	 */
+	private static void settingFruit(int fruitNum, List<Fruit> fruits) {
+		for (int i = 0; i < fruitNum; i++) {
+			Fruit fruit = new Fruit();
+			fruit.setId(UUID.randomUUID().toString());
+			fruit.setMark("aa" + i);
+			fruits.add(fruit);
+		}
+	}
+
+	/**
+	 * 设置苹果类
+	 * @param appleNum 个数
+	 * @param apples 苹果list
+	 */
+	private static void settingApple(int appleNum, List<Apple> apples) {
         for (int i = 0; i < appleNum; i++) {
             Apple apple = new Apple();
             apple.setId(UUID.randomUUID().toString());
             apple.setMark("aa" + i);
+            apple.setRemark("苹果");
             apples.add(apple);
         }
     }

@@ -11,7 +11,7 @@ import java.util.List;
  * @Author:upupupuup
  * @Date:2019/6/28 8:02 PM
  * @Version 1.0
- * @Description:[一句话描述该类的功能]
+ * @Description:筛选大于10岁的小朋友
  */
 public class Exercise4 {
     public static void main(String[] args) {

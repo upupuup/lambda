@@ -11,7 +11,7 @@ import java.util.TreeSet;
  * @Author:upupupuup
  * @Date:2019/6/28 8:02 PM
  * @Version 1.0
- * @Description:[一句话描述该类的功能]
+ * @Description:输出list里的偶数
  */
 public class Exercise3 {
     public static void main(String[] args) {

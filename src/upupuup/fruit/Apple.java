@@ -14,6 +14,7 @@ public class Apple implements Serializable {
     private String work;
     private String prise;
     private String mark;
+    private String remark;
 
     public String getId() {
         return id;
@@ -55,6 +56,14 @@ public class Apple implements Serializable {
         this.mark = mark;
     }
 
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
+
     @Override
     public String toString() {
         return "Apple{" +
@@ -63,6 +72,7 @@ public class Apple implements Serializable {
                 ", work='" + work + '\'' +
                 ", prise='" + prise + '\'' +
                 ", mark='" + mark + '\'' +
+                ", remark='" + remark + '\'' +
                 '}';
     }
 }
