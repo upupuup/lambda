@@ -39,6 +39,7 @@ public class FruitDemo {
         ));
         fruits.forEach(fruit -> System.out.println(fruit));
 
+        // 设置apple属性和备注属性
         fruits = fruits
 				.stream()
 				.map(fruit -> apples.stream()
